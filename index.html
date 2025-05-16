@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Postos Murungava</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header>
@@ -16,6 +16,7 @@
         <li><a href="#">Transportadoras</a></li>
         <li><a href="#">Serviços</a></li>
         <li><a href="#">Contato</a></li>
+        <li><a href="login-moderador.html">Login</a></li>
       </ul>
     </nav>
   </header>
@@ -24,35 +25,35 @@
     <div class="hero-content">
       <h1>Bem-vindo aos Postos Murungava</h1>
       <p>Facilidade e segurança para quem transporta o Brasil</p>
-      <button>Validar Carta Frete</button>
+      <button id="validar-frete-btn">Validar Carta Frete</button>
     </div>
   </section>
 
   <section class="blocks">
     <div class="block">
-      <h2>Validação de Carta Frete</h2>
-      <button>Acessar opções de validação</button>
+      <h2 data-editable="true">Validação de Carta Frete</h2>
+      <button id="opcoes-validacao">Acessar opções de validação</button>
     </div>
     <div class="block">
-      <h2>Está liberado para abastecer?</h2>
-      <button>Consultar associação</button>
+      <h2 data-editable="true">Está liberado para abastecer?</h2>
+      <button id="consultar-associacao">Consultar associação</button>
     </div>
   </section>
 
   <section class="services">
     <h2>Serviços</h2>
     <div class="service-list" id="service-list">
-      <div class="service-item">🕓 Abastecimento 24h</div>
-      <div class="service-item">🍽️ Lanchonete e Refeições</div>
-      <div class="service-item">🛏️ Banho e descanso</div>
-      <div class="service-item">📶 Wi-Fi gratuito</div>
+      <div class="service-item" data-editable="true">🕓 Abastecimento 24h</div>
+      <div class="service-item" data-editable="true">🍽️ Lanchonete e Refeições</div>
+      <div class="service-item" data-editable="true">🛏️ Banho e descanso</div>
+      <div class="service-item" data-editable="true">📶 Wi-Fi gratuito</div>
     </div>
     <div id="edit-services" class="edit-mode"></div>
   </section>
 
   <footer>
-    <p>Otava Feira, use o óleo cola. Ouitor cune e págua para mauflenstiul</p>
-    <small>Wi-Fi gratuito | Troca de óleo e manutenção</small>
+    <p data-editable="true">Otava Feira, use o óleo cola. Ouitor cune e págua para mauflenstiul</p>
+    <small data-editable="true">Wi-Fi gratuito | Troca de óleo e manutenção</small>
   </footer>
 
   <script src="script.js"></script>
