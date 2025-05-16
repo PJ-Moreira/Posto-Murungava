@@ -1,24 +1,28 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const isModerador = localStorage.getItem('moderador') === 'logado';
+  const isAdmin = localStorage.getItem('moderador') === 'logado';
+  if (isAdmin) {
+    document.querySelectorAll('[data-editable="true"]').forEach(el => {
+      el.contentEditable = true;
+      el.style.border = '1px dashed orange';
+      el.style.padding = '5px';
+    });
 
-  if (isModerador) {
-    const servicesSection = document.getElementById('service-list');
-    const editor = document.getElementById('edit-services');
-
-    if (servicesSection && editor) {
-      const addBtn = document.createElement('button');
-      addBtn.textContent = "Adicionar Serviço";
-      addBtn.style.marginTop = "20px";
-      addBtn.onclick = () => {
-        const nome = prompt("Nome do novo serviço:");
-        if (nome) {
-          const div = document.createElement('div');
-          div.className = 'service-item';
-          div.textContent = nome;
-          servicesSection.appendChild(div);
-        }
+    const editServices = document.getElementById('edit-services');
+    if (editServices) {
+      const btn = document.createElement('button');
+      btn.textContent = 'Adicionar Serviço';
+      btn.onclick = () => {
+        const serviceList = document.getElementById('service-list');
+        const newService = document.createElement('div');
+        newService.className = 'service-item';
+        newService.textContent = prompt('Novo serviço:');
+        newService.setAttribute('data-editable', 'true');
+        newService.contentEditable = true;
+        newService.style.border = '1px dashed orange';
+        newService.style.padding = '5px';
+        serviceList.appendChild(newService);
       };
-      editor.appendChild(addBtn);
+      editServices.appendChild(btn);
     }
   }
 });
